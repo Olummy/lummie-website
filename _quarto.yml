@@ -21,10 +21,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: research.qmd
-      - href: software.qmd
-      - href: blog.qmd
-
+      
 format:
   html:
     theme: journal
