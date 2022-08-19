@@ -1,0 +1,64 @@
+---
+title: "Olumide Oyalola"
+description: "Data Scientist, Excellent Data Storyteller!"
+page-layout: full
+image: ./images/olumide2.jpeg
+resources:
+    - "./images/olumide2.jpeg"
+---
+
+::: {.column-page-inset}
+::: {.column-page-inset-left}
+
+
+I'm a data-driven professional with a strong combination of education and compelling experience in driving business results through analytics. Known for a keen ability to analyze and draw meaningful insights from data and translate them into actionable strategies. 
+
+I possess excellent research, teaching, listening, and interpersonal skills.
+
+I'm a native English speaker.
+
+I particularly enjoy the process of contributing to the learning journey of data analysts that are just starting out.
+
+I make time for freelance projects that are engaging and challenging!
+
+[Contact me on Codementor](https://www.codementor.io/@olumidemichaeloyalola)
+
+[![](https://www.codementor.io/m-badges/olumidemichaeloyalola/im-a-cm-g.svg)](https://www.codementor.io/@olumidemichaeloyalola?refer=badge)
+
+:::
+
+<div class="column-margin column-container">
+<img src = "./images/olumide2.jpeg" alt="Olumide">
+<!-- ![](./images/olumide2.jpeg){.circled} -->
+</div>
+:::
+
+{{< pagebreak >}}
+
+::: {.column-page-inset .text-center}
+```{=html}
+<a class="btn btn-outline-dark", href="https://twitter.com/iamolumide" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-twitter" role='img' aria-label='Twitter'></i>
+</a>
+
+<a class="btn btn-outline-dark", href="https://github.com/olummy" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-github" role='img' aria-label='Github'></i>
+</a>
+
+<a class="btn btn-outline-dark", href="https://www.linkedin.com/in/olumide-michael-oyalola-9a522857/" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-linkedin" role='img' aria-label='LinkedIn'></i>
+</a>
+
+
+<a class="btn btn-outline-dark", href="mailto:olumideoyalola@gmail.com" target="_blank" rel="noopener noreferrer">
+    <i class="ai bi-envelope" role='img' aria-label='email'></i>
+</a>
+
+
+<a class="btn btn-outline-dark", href="https://www.codementor.io/@olumidemichaeloyalola" target="_blank" rel="noopener noreferrer">
+    <i class="bi bi-question-diamond-fill" role='img' aria-label='Codementor'></i>
+</a>
+
+```
+:::
+

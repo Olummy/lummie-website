@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Olumide Oyalola"
+  description: "Personal website of Olumide Oyalola"
+  site-url: https://olumideoyalola.com
+  repo-url: https://github.com/olummy/lummie-website
+  google-analytics: ""
+  open-graph: true
+  favicon: images/favicon.png
+  twitter-card: 
+    creator: "@iamolumide"
+    site: "@iamolumide"
+    card-style: "summary_large_image"
+  navbar:
+    background: dark
+    foreground: light
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - href: research.qmd
+      - href: software.qmd
+      - href: blog.qmd
+
+format:
+  html:
+    theme: journal
+    css: [styles.css, index.css]
+    toc: true
+    toc-depth: 4
+    toc-title: "Contents"
+    html-math-method: katex
+    include-in-header: 
+      - includes.html
+    highlight-style: tango
+
+
+
