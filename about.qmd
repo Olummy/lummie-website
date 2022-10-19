@@ -14,7 +14,7 @@ I am currently the Data Scientist at the Dangote Industries Limited and I also s
 - Experimental Design
 - Mobile Data Collection
 
-### Tools & Technologies
+### Data Stack
 
 ::: {.d-flex .justify-content-between}
 ::: {}
@@ -30,7 +30,7 @@ I am currently the Data Scientist at the Dangote Industries Limited and I also s
 ::: {.d-flex .justify-content-between}
 ::: {}
 **Development Environments**  
-- Rstudio | Jupyter | VS Code | Pluto  
+- Rstudio | Jupyter | VS Code | Pluto  | Literate Programming with Quarto and Rmarkdown
 :::
 ::: {.text-end}
 
@@ -50,7 +50,7 @@ I am currently the Data Scientist at the Dangote Industries Limited and I also s
 ::: {.d-flex .justify-content-between}
 ::: {}
 **BI Tools**  
-- PowerBI | Google Data Studio | Tableau | Kibana 
+- PowerBI | Looker Studio | Tableau | Kibana 
 :::
 ::: {.text-end}
 

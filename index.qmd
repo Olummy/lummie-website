@@ -23,7 +23,7 @@ I make time for freelance projects that are engaging and challenging!
 
 [Contact me on Codementor](https://www.codementor.io/@olumidemichaeloyalola)
 
-[![](https://www.codementor.io/m-badges/olumidemichaeloyalola/im-a-cm-g.svg)](https://www.codementor.io/@olumidemichaeloyalola?refer=badge)
+<!-- [![](https://www.codementor.io/m-badges/olumidemichaeloyalola/im-a-cm-g.svg)](https://www.codementor.io/@olumidemichaeloyalola?refer=badge) -->
 
 :::
 
@@ -45,7 +45,7 @@ I make time for freelance projects that are engaging and challenging!
     <i class="bi bi-github" role='img' aria-label='Github'></i>
 </a>
 
-<a class="btn btn-outline-dark", href="https://www.linkedin.com/in/olumide-michael-oyalola-9a522857/" target="_blank" rel="noopener noreferrer">
+<a class="btn btn-outline-dark", href="https://www.linkedin.com/in/olumide-oyalola/" target="_blank" rel="noopener noreferrer">
     <i class="bi bi-linkedin" role='img' aria-label='LinkedIn'></i>
 </a>
 
