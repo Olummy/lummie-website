@@ -21,6 +21,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - blog.qmd
       
 format:
   html:
@@ -33,6 +34,9 @@ format:
     include-in-header: 
       - includes.html
     highlight-style: tango
+
+listing: 
+  contents: posts
 
 
 

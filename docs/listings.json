@@ -1,0 +1,24 @@
+[
+  {
+    "listing": "/about.html",
+    "items": [
+      "/posts/osrm-post/index.html"
+    ]
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/osrm-post/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/osrm-post/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/osrm-post/index.html",
+    "items": []
+  }
+]
