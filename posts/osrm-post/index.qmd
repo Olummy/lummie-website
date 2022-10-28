@@ -4,15 +4,15 @@ description: "In this blog post, I would demonstrate how I used the osrm package
 author: "Olumide Oyalola"
 date: "10/19/2022"
 categories:
-  - code
-  - analysis
+  - CODE
+  - ANALYSIS
   - GIS
   - R
 ---
 
 ## Introduction to OSRM R package
 
-An interface between `R` and the `OSRM` (OpenStreetMap-Based Routing Service) API. 'OSRM' is a routing service based on 'OpenStreetMap' data. [See](http://project-osrm.org) for more information. This package allows to compute **routes**, **trips**, **isochrones** and **travel distances** matrices (_travel time in minutes_ and _distance in kilometer_).
+An interface between `R` and the `OSRM` (OpenStreetMap-Based Routing Service) API. `OSRM` is a routing service based on `OpenStreetMap` data. [See](http://project-osrm.org) for more information. This package allows to compute **routes**, **trips**, **isochrones** and **travel distances** matrices (_travel time in minutes_ and _distance in kilometer_).
 
 The package is available on CRAN and it can be installed by running the code chunk below from the Rstudio console.
 

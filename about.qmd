@@ -9,6 +9,7 @@ I am currently the Data Scientist at the Dangote Industries Limited and I also s
 ### Research Interests
 
 - Environmental Statistics
+- Geocomputation
 - Machine Learning
 - Data Science
 - Experimental Design

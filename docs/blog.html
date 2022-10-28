@@ -66,9 +66,9 @@ ul.task-list{list-style: none;}
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -105,7 +105,7 @@ ul.task-list{list-style: none;}
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="index.css">
-<meta property="og:title" content="Olumide Oyalola - Blog">
+<link rel="alternate" type="application/rss+xml" title="Olumide Oyalola" href="blog.xml"><meta property="og:title" content="Olumide Oyalola - Blog">
 <meta property="og:site-name" content="Olumide Oyalola">
 <meta name="twitter:title" content="Olumide Oyalola - Blog">
 <meta name="twitter:creator" content="@iamolumide">
@@ -136,6 +136,13 @@ ul.task-list{list-style: none;}
     <a class="nav-link active" href="./blog.html" aria-current="page">Blog</a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="./blog.xml"><i class="bi bi-rss" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -147,7 +154,7 @@ ul.task-list{list-style: none;}
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ANALYSIS">ANALYSIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="CODE">CODE <span class="quarto-category-count">(1)</span></div><div class="category" data-category="GIS">GIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -173,7 +180,7 @@ ul.task-list{list-style: none;}
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="code,analysis,GIS,R" data-listing-date-sort="1666134000000" data-listing-file-modified-sort="1666186451480" data-listing-reading-time-sort="9.215">
+<div class="quarto-post image-right" data-index="0" data-categories="CODE,ANALYSIS,GIS,R" data-listing-date-sort="1666134000000" data-listing-file-modified-sort="1666187415565" data-listing-reading-time-sort="9.215">
 <div class="body">
 <a href="./posts/osrm-post/index.html">
 <h3 class="no-anchor listing-title">
@@ -182,6 +189,22 @@ Working with the OSRM API
 <div class="listing-subtitle">
 
 </div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('CODE'); return false;">
+CODE
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('ANALYSIS'); return false;">
+ANALYSIS
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('GIS'); return false;">
+GIS
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+</div>
+<a href="./posts/osrm-post/index.html">
 <div class="listing-description">
 <p>In this blog post, I would demonstrate how I used the osrm package in R to return the distance and travel time between a destination and different sources</p>
 </div>

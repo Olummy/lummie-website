@@ -5,7 +5,7 @@ project:
 website:
   title: "Olumide Oyalola"
   description: "Personal website of Olumide Oyalola"
-  site-url: https://olumideoyalola.com
+  site-url: https://iamolumide.quarto.pub/olumide-oyalola/
   repo-url: https://github.com/olummy/lummie-website
   google-analytics: ""
   open-graph: true
@@ -17,6 +17,9 @@ website:
   navbar:
     background: dark
     foreground: light
+    right: 
+      - icon: rss
+        href: blog.xml
     left:
       - href: index.qmd
         text: Home

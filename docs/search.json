@@ -11,7 +11,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "In this blog post, I would demonstrate how I used the osrm package in R to return the distance and travel time between a destination and different sources\n\n\n\n\n\n\nOct 19, 2022\n\n\nOlumide Oyalola\n\n\n\n\n\n\nNo matching items"
+    "text": "CODE\n\n\nANALYSIS\n\n\nGIS\n\n\nR\n\n\n\n\nIn this blog post, I would demonstrate how I used the osrm package in R to return the distance and travel time between a destination and different sources\n\n\n\n\n\n\nOct 19, 2022\n\n\nOlumide Oyalola\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -25,14 +25,14 @@
     "href": "posts/osrm-post/index.html",
     "title": "Working with the OSRM API",
     "section": "",
-    "text": "An interface between R and the OSRM (OpenStreetMap-Based Routing Service) API. ‘OSRM’ is a routing service based on ‘OpenStreetMap’ data. See for more information. This package allows to compute routes, trips, isochrones and travel distances matrices (travel time in minutes and distance in kilometer).\nThe package is available on CRAN and it can be installed by running the code chunk below from the Rstudio console.\nFor the purpose of this post, the osrmTable function from the osrm package in R would be used to return the distance in meter and the travel time in minutes.\n\ninstall.packages(\"osrm\")"
+    "text": "An interface between R and the OSRM (OpenStreetMap-Based Routing Service) API. OSRM is a routing service based on OpenStreetMap data. See for more information. This package allows to compute routes, trips, isochrones and travel distances matrices (travel time in minutes and distance in kilometer).\nThe package is available on CRAN and it can be installed by running the code chunk below from the Rstudio console.\nFor the purpose of this post, the osrmTable function from the osrm package in R would be used to return the distance in meter and the travel time in minutes.\n\ninstall.packages(\"osrm\")"
   },
   {
     "objectID": "posts/osrm-post/index.html#load-packages",
     "href": "posts/osrm-post/index.html#load-packages",
     "title": "Working with the OSRM API",
     "section": "Load Packages",
-    "text": "Load Packages\n\n# Install pacman package if needed\nif(!require(\"pacman\")) install.packages(\"pacman\")\n\nLoading required package: pacman\n\n# load the required packages\n\npacman::p_load(\n  httr,\n  jsonlite,\n  tidyjson,\n  tidyverse,\n  lubridate,\n  geosphere,\n  anytime,\n  tictoc,\n  stringi,\n  maptools,\n  geosphere,\n  sf,\n  sp,\n  openxlsx,\n  leaflet,\n  magrittr,\n  janitor,\n  arrow,\n  magrittr,\n  osrm\n)\n\n\nLoad Data\n\n# load parquet files as tibble\n\ntic(\"Load the parquet files\")\n\n\ndf <- list.files(\"../../../../Dangote/IbeseLivePosition/data_parquet/\",\n                 full.names = TRUE,\n                 include.dirs = TRUE) %>%\n  tail(., 100) %>% \n  map_df(~read_parquet(., as_tibble = TRUE))\n\ntoc()\n\nLoad the parquet files: 10.53 sec elapsed"
+    "text": "Load Packages\n\n# Install pacman package if needed\nif(!require(\"pacman\")) install.packages(\"pacman\")\n\nLoading required package: pacman\n\n# load the required packages\n\npacman::p_load(\n  httr,\n  jsonlite,\n  tidyjson,\n  tidyverse,\n  lubridate,\n  geosphere,\n  anytime,\n  tictoc,\n  stringi,\n  maptools,\n  geosphere,\n  sf,\n  sp,\n  openxlsx,\n  leaflet,\n  magrittr,\n  janitor,\n  arrow,\n  magrittr,\n  osrm\n)\n\n\nLoad Data\n\n# load parquet files as tibble\n\ntic(\"Load the parquet files\")\n\n\ndf <- list.files(\"../../../../Dangote/IbeseLivePosition/data_parquet/\",\n                 full.names = TRUE,\n                 include.dirs = TRUE) %>%\n  tail(., 100) %>% \n  map_df(~read_parquet(., as_tibble = TRUE))\n\ntoc()\n\nLoad the parquet files: 15.19 sec elapsed"
   },
   {
     "objectID": "posts/osrm-post/index.html#data-munging",
