@@ -109,7 +109,7 @@ Granted September 2010
 :::
 *Data Scientist*
 
-- Supervisor: Aliyu Suleiman
+<!-- - Supervisor: Aliyu Suleiman -->
 
 ::: {.d-flex .justify-content-between}
 ::: {}
