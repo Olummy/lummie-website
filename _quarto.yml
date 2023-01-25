@@ -23,8 +23,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-      - blog.qmd
+      - href: about.qmd
+      - href: blog.qmd
       
 format:
   html:
