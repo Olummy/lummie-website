@@ -1,0 +1,38 @@
+## Global Obesity Prevalence
+
+::: columns
+::: {.column width="55%"}
+An exploratory analysis on the global obesity prevalence. I used   `flexdashboard` to present the analysis! An annual data from 1975 to 2014 was explored. .... [Continue reading](https://rpubs.com/OlumideOyalola/995625/){target=_blank}
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="40%"}
+![](images/obesity_prevalence.png)
+:::
+:::
+
+## US Energy Analysis
+
+::: columns
+
+
+::: {.column width="40%"}
+![](images/us_energy.png)
+:::
+
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="55%"}
+
+Exploratory analysis of the annual US crude oil import prices
+... [Link to the flexdashboard](https://rpubs.com/OlumideOyalola/995639/){target=_blank}
+:::
+
+
+:::
+
+

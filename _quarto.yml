@@ -24,7 +24,10 @@ website:
       - href: about.qmd
         text: About
       - href: blog.qmd
-        text: Blog  
+        text: Blog
+      - href: projects.qmd
+        text: Projects
+
       
 
         
