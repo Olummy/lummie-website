@@ -4,10 +4,12 @@ description: "In this blog post, I would demonstrate how I used the osrm package
 author: "Olumide Oyalola"
 date: "10/19/2022"
 categories:
-  - CODE
-  - ANALYSIS
+  - Code
+  - Analysis
   - GIS
   - R
+  - Routing
+  - Open Street Map (osrm)
 ---
 
 ## Introduction to OSRM R package

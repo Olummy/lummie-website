@@ -4,42 +4,64 @@ project:
 
 website:
   title: "Olumide Oyalola"
-  description: "Personal website of Olumide Oyalola"
-  site-url: https://iamolumide.quarto.pub/olumide-oyalola/
-  repo-url: https://github.com/olummy/lummie-website
-  google-analytics: ""
-  open-graph: true
-  favicon: images/favicon.png
-  twitter-card: 
-    creator: "@iamolumide"
-    site: "@iamolumide"
-    card-style: "summary_large_image"
+  
+  favicon: "images/olumide2.jpeg"
+  
+  page-footer:
+    center: |
+      <span class="container"><strong>[Contact Olumide Oyalola](mailto:olumideoyalola@gmail.com){target="_blank"}</strong></span>
+    left: |
+      <span class="container"><strong>Made with [Posit Quarto](https://quarto.org/){target="_blank"}</strong></span>
+    right: |
+      <span class="container"><strong>[Github Repo](https://github.com/olummy/lummie-website){target="_blank"}</strong></span>
+    background: "#004E4F"
+    
   navbar:
-    background: dark
-    foreground: light
-    right: 
-      - icon: rss
-        href: blog.xml
+    
     left:
       - href: index.qmd
         text: Home
       - href: about.qmd
+        text: About
       - href: blog.qmd
+        text: Blog  
       
+
+        
+    right:
+      - icon: rss
+        href: blog.xml
+      - icon: mastodon
+        href: https://www.codementor.io/@olumidemichaeloyalola
+        aria-label: Quarto Mastodon
+      - icon: twitter
+        href: https://twitter.com/iamolumide
+        aria-label: Quarto Twitter
+      - icon: linkedin
+        href: https://linkedin.com/in/olumide-oyalola
+        aria-label: Quarto LinkedIn
+      - icon: github
+        href: https://github.com/olummy/
+        aria-label: Quarto Github
+        
+  search: 
+    location: navbar
+    type: overlay
+
 format:
   html:
-    theme: journal
-    css: [styles.css, index.css]
-    toc: true
-    toc-depth: 4
-    toc-title: "Contents"
-    html-math-method: katex
-    include-in-header: 
-      - includes.html
-    highlight-style: tango
-
-listing: 
-  contents: posts
+    theme:
+      light: theme_light_custom.scss
+      dark: theme_dark_custom.scss
+    css: styles.css
+    citations-hover: true
+    code-link: true
+    code-fold: show
+    code-tools: false
+    code-block-border-left: "#004E4F"
 
 
+    
 
+    
+editor: visual
