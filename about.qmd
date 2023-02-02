@@ -2,97 +2,111 @@
 title: "About"
 ---
 
-
 I am currently the Data Scientist at the Dangote Industries Limited and I also served as the Analytics faculty member with BNet Learning.
-
 
 ### Research Interests
 
-- Environmental Statistics
-- Geocomputation
-- Machine Learning
-- Data Science
-- Experimental Design
-- Mobile Data Collection
+-   Environmental Statistics
+-   Geocomputation
+-   Machine Learning
+-   Data Science
+-   Experimental Design
+-   Mobile Data Collection
 
 ### Data Stack
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Data Tool Box**  
-- R | Python | Julia | SQL | Excel | ODK  
-:::
-::: {.text-end}
+<div>
 
-:::
-:::
+**Data Tool Box**\
+- R \| Python \| Julia \| SQL \| Excel \| ODK
 
+</div>
 
-::: {.d-flex .justify-content-between}
-::: {}
-**Development Environments**  
-- Rstudio | Jupyter | VS Code | Pluto  | Literate Programming with Quarto and Rmarkdown
-:::
-::: {.text-end}
-
+::: text-end
 :::
 :::
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Databases**  
-- PostgreSQL | Elasticsearch
-:::
-::: {.text-end}
+<div>
 
-:::
-:::
+**Development Environments**\
+- Rstudio \| Jupyter \| VS Code \| Pluto \| Literate Programming with Quarto and Rmarkdown
 
-::: {.d-flex .justify-content-between}
-::: {}
-**BI Tools**  
-- PowerBI | Looker Studio | Tableau | Kibana 
-:::
-::: {.text-end}
+</div>
 
+::: text-end
 :::
 :::
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Operating Systems**  
-- Windows | Ubuntu | CentOS   
-:::
-::: {.text-end}
+<div>
 
+**Databases**\
+- PostgreSQL \| Elasticsearch
+
+</div>
+
+::: text-end
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+<div>
+
+**BI Tools**\
+- PowerBI \| Looker Studio \| Tableau \| Kibana
+
+</div>
+
+::: text-end
+:::
+:::
+
+::: {.d-flex .justify-content-between}
+<div>
+
+**Operating Systems**\
+- Windows \| Ubuntu \| CentOS
+
+</div>
+
+::: text-end
 :::
 :::
 
 ### Education
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**University of Ibadan**  
-MSc in Statistics  
+<div>
+
+**University of Ibadan**\
+MSc in Statistics\
 Advisor: Prof. K.O. Obisesan
-:::
-::: {.text-end}
+
+</div>
+
+::: text-end
 Ibadan, Nigeria
 
 Granted March 2015
 :::
 :::
-- Dissertation: *Extreme Value Model for Rainfall Distribution*
-- Research Area: Environmental Statistics
-- Obtained PhD Grade
+
+-   Dissertation: *Extreme Value Model for Rainfall Distribution*
+-   Research Area: Environmental Statistics
+-   Obtained PhD Grade
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Federal University of Technology, Akure**  
+<div>
+
+**Federal University of Technology, Akure**\
 B.Tech in Industrial Mathematics
-:::
-::: {.text-end}
-Akure, Nigeria  
+
+</div>
+
+::: text-end
+Akure, Nigeria\
 Granted September 2010
 :::
 :::
@@ -100,126 +114,161 @@ Granted September 2010
 ### Experience
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Dangote Industries Limited**  
-:::
-::: {.text-end}
+<div>
+
+**Dangote Industries Limited**
+
+</div>
+
+::: text-end
 2022 - present
 :::
 :::
+
 *Data Scientist*
+
+-   Orchestrated a data pipeline from a third party system.
+-   Implemented an extensive ETL process.
+-   Continuous mining of the transformed data.
+-   Developed and monitor ML models using `tidymodels` methodology in `R`.
 
 <!-- - Supervisor: Aliyu Suleiman -->
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Longbridge Technologies Limited**  
-:::
-::: {.text-end}
+<div>
+
+**Longbridge Technologies Limited**
+
+</div>
+
+::: text-end
 2019 - 2021
 :::
 :::
+
 *Head, Business Transformation & Operational Excellence*
 
-- Worked in a cross-functional environment with various business groups, and end-users to identify, document, and communicate business processes.
-- Created a system to evaluate the success of any adjustments made within the organization and present findings.
-- Communicated strategies and objectives with relevant departments and colleagues.
+-   Worked in a cross-functional environment with various business groups, and end-users to identify, document, and communicate business processes.
+-   Created a system to evaluate the success of any adjustments made within the organization and present findings.
+-   Communicated strategies and objectives with relevant departments and colleagues.
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**eHealth Systems Africa**  
-:::
-::: {.text-end}
+<div>
+
+**eHealth Systems Africa**
+
+</div>
+
+::: text-end
 2017 - 2018
 :::
 :::
+
 *Data Scientist*
 
-- Developed models to discover the patterns and information in vast amounts of spatial and non-spatial data across several programs at eHA to support better programmatic decisions, intervention planning and improved information products.
+-   Developed models to discover the patterns and information in vast amounts of spatial and non-spatial data across several programs at eHA to support better programmatic decisions, intervention planning and improved information products.
 
-- Applied data mining techniques, performed statistical analysis, and build high quality prediction models that formed core of eHA’s information products on disease surveillance in particular.
+-   Applied data mining techniques, performed statistical analysis, and build high quality prediction models that formed core of eHA's information products on disease surveillance in particular.
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Venture Garden Group**  
-:::
-::: {.text-end}
+<div>
+
+**Venture Garden Group**
+
+</div>
+
+::: text-end
 2016-2017
 :::
 :::
+
 *Data Scientist*
 
-- Lead discovery processes with Institute stakeholders to identify the business requirements and the expected outcome.
-- Conducted advanced data analysis and complex designs algorithm.
-- Applied advanced statistical and predictive modeling techniques to build, maintain, and improve on multiple real-time decision systems.
-- Validated analysis using scenario modeling.
-
+-   Lead discovery processes with Institute stakeholders to identify the business requirements and the expected outcome.
+-   Conducted advanced data analysis and complex designs algorithm.
+-   Applied advanced statistical and predictive modeling techniques to build, maintain, and improve on multiple real-time decision systems.
+-   Validated analysis using scenario modeling.
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Computer Warehouse Group, Plc**  
-:::
-::: {.text-end}
+<div>
+
+**Computer Warehouse Group, Plc**
+
+</div>
+
+::: text-end
 2013-2016
 :::
 :::
+
 *Quality Assurance Analyst*
 
-- Encouraged factual approach to decision making by providing the management an accurate analysis of people and processes.
-- Achieved success in providing standard value-added metrics for business model.
-- Conducted quality spot checks of project implementations & Services (Software, Hardware, Communication).
-- Provided both administrative and analytic support to departments in order to manage critical and people sensitive projects.
-- Collaborated with the VP of Sales in the development of sales forecasts and projections.
-- Summarized and report performance against sales quotas to all sales personnel in a timely manner.
-- Proactively prepare and deliver ad hoc customer analysis to sales team members and senior management.
-
-
+-   Encouraged factual approach to decision making by providing the management an accurate analysis of people and processes.
+-   Achieved success in providing standard value-added metrics for business model.
+-   Conducted quality spot checks of project implementations & Services (Software, Hardware, Communication).
+-   Provided both administrative and analytic support to departments in order to manage critical and people sensitive projects.
+-   Collaborated with the VP of Sales in the development of sales forecasts and projections.
+-   Summarized and report performance against sales quotas to all sales personnel in a timely manner.
+-   Proactively prepare and deliver ad hoc customer analysis to sales team members and senior management.
 
 ::: {.d-flex .justify-content-between}
-::: {}
-**Practical Sampling International**  
-:::
-::: {.text-end}
+<div>
+
+**Practical Sampling International**
+
+</div>
+
+::: text-end
 2012-2013
 :::
 :::
+
 *Data Analyst*
 
-- Supervised the data collection process of many high profile projects.
-- Processed and analyzed raw data collected from field work.
-- Improved the statistical procedure usage and reporting method.
+-   Supervised the data collection process of many high profile projects.
+-   Processed and analyzed raw data collected from field work.
+-   Improved the statistical procedure usage and reporting method.
 
-
-
-
-### Teaching 
+### Teaching
 
 #### Codementor.io
+
 ::: {.d-flex .justify-content-between}
-::: {}
-Data Analytics Mentor 
-:::
-::: {.text-end}
+<div>
+
+Data Analytics Mentor
+
+</div>
+
+::: text-end
 2018-present
 :::
 :::
 
 #### BNet Learning
+
 ::: {.d-flex .justify-content-between}
-::: {}
+<div>
+
 Data Analytics Faculty
-:::
-::: {.text-end}
+
+</div>
+
+::: text-end
 2018-present
 :::
 :::
 
 #### EduPristine
+
 ::: {.d-flex .justify-content-between}
-::: {}
+<div>
+
 Guest Faculty, Business Analytics
-:::
-::: {.text-end}
+
+</div>
+
+::: text-end
 2015-2016
 :::
 :::
@@ -227,10 +276,13 @@ Guest Faculty, Business Analytics
 #### AfriHUB Nigeria
 
 ::: {.d-flex .justify-content-between}
-::: {}
+<div>
+
 Guest Faculty IBM SPSS
-:::
-::: {.text-end}
+
+</div>
+
+::: text-end
 2011-2012
 :::
 :::

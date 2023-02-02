@@ -14,18 +14,18 @@ categories:
 
 ## Introduction to OSRM R package
 
-An interface between `R` and the `OSRM` (OpenStreetMap-Based Routing Service) API. `OSRM` is a routing service based on `OpenStreetMap` data. [See](http://project-osrm.org) for more information. This package allows to compute **routes**, **trips**, **isochrones** and **travel distances** matrices (_travel time in minutes_ and _distance in kilometer_).
+An interface between `R` and the `OSRM` (OpenStreetMap-Based Routing Service) API. `OSRM` is a routing service based on `OpenStreetMap` data. [See](http://project-osrm.org) for more information. This package allows to compute **routes**, **trips**, **isochrones** and **travel distances** matrices (*travel time in minutes* and *distance in kilometer*).
 
 The package is available on CRAN and it can be installed by running the code chunk below from the Rstudio console.
 
-For the purpose of this post, the **_osrmTable_** function from the **osrm** package in R would be used to return the distance in meter and the travel time in minutes.
+For the purpose of this post, the ***osrmTable*** function from the **osrm** package in R would be used to return the distance in meter and the travel time in minutes.
 
 ```{r}
 #| eval: false
 #| echo: true
 
 
-install.packages("osrm")
+#install.packages("osrm")
 ```
 
 ## Load Packages
@@ -36,7 +36,7 @@ install.packages("osrm")
 
 
 # Install pacman package if needed
-if(!require("pacman")) install.packages("pacman")
+#if(!require("pacman")) install.packages("pacman")
 
 # load the required packages
 
@@ -64,23 +64,17 @@ pacman::p_load(
 )
 ```
 
-
 ### Load Data
 
 ```{r}
 #| eval: true
 #| echo: true
 
-# load parquet files as tibble
+# load  file as tibble
 
-tic("Load the parquet files")
+tic("Load the csv file")
 
-
-df <- list.files("../../../../Dangote/IbeseLivePosition/data_parquet/",
-                 full.names = TRUE,
-                 include.dirs = TRUE) %>%
-  tail(., 100) %>% 
-  map_df(~read_parquet(., as_tibble = TRUE))
+df <- read_csv("ml_data.parquet")
 
 toc()
 
@@ -90,16 +84,20 @@ toc()
 ## Data Munging
 
 ```{r}
+#| eval: false
+#| echo: false
+
 remove <- c("/Date", "(", ")/", "[[:punct:]]")
 
 var <- c("ActualSpeed", "Address", "Altitude", "AssetClass", "AssetLocationID", "AssetStatus", "CategoryID", "CategoryName", "City", "CustomerName", "DateTimeLocal", "DateTimeReceived", "DeliveryOrderNumber", "DepartureDateTime", "DestinationArea", "DestinationCity", "DestinationSite", "DestinationStreet", "DeviceType", "DirectionString", "Distance", "DriverCode", "DriverID", "Geofence", "IgnitionStatus", "Information", "JourneyDistance", "JourneyDuration", "JourneyIdleTime", "JourneyMaxSpeed", "LastIgnitionOff", "LastIgnitionOn", "Latitude", "Load", "Longitude", "NumSatellites", "Odometer", "Reason", "ReasonString", "Reference", "Region", "SiteName", "SpeedOverGround", "Status", "Street", "TrackTrue", "TripDestination", "TripID", "TripSource", "TripType", "UTCDateTime", "WaybillNumber")
 
 ```
 
-
-
-
 ```{r}
+#| eval: false
+#| echo: false
+
+
 # data cleaning
 
 df %<>% 
@@ -153,10 +151,9 @@ df %<>% mutate(TripID = as.numeric(TripID))
 
 ```
 
-
-
-
 ```{r}
+#| eval: false
+#| echo: false
 options(scipen = 999)
 
 # destination dataframe
@@ -172,10 +169,13 @@ ibese_geofence <- c("Ibese", "IBESE", "Vehicle Park", "Vehicle Park 2")
 
 ```
 
-
 ### Determining the direction of the truck
 
 ```{r}
+#| eval: false
+#| echo: false
+
+
 inbound_df <- df %>% 
   filter(AssetStatus == "InService", Longitude > 0, 
          Latitude > 0) %>% 
@@ -205,20 +205,20 @@ inbound_df <- df %>%
 
 ```
 
-
 ### Estimating the arrival time and distance
 
-
 ```{r}
-duration <- osrmTable(src = inbound_df %>% ungroup() %>% 
-                        filter(as.Date(DateTimeReceived) == today()) %>% 
+#| eval: false
+#| echo: false
+duration <- osrmTable(src = df %>%
+                        # filter(as.Date(DateTimeReceived) == today()) %>% 
                         select(TripID, Longitude, Latitude) %>% 
                         slice_head(n = 100),
                       dst = ibese_df, measure = "duration", osrm.profile = "car")
 
 
-distance <- osrmTable(src = inbound_df %>% ungroup() %>% 
-                        filter(as.Date(DateTimeReceived) == today()) %>% 
+distance <- osrmTable(src = df %>%
+                        # filter(as.Date(DateTimeReceived) == today()) %>% 
                         select(TripID, Longitude, Latitude) %>% 
                         slice_head(n = 100),
                       dst = ibese_df, measure = "distance", osrm.profile = "car")
@@ -242,13 +242,14 @@ durations <- duration$durations %>%
 
 ```
 
-
 ## Data Join
 
 Joining the `durations`, `distances` and `inbound_df` data frames.
 
 ```{r}
-arrival <- inbound_df %>% ungroup() %>% 
+#| eval: false
+#| echo: false
+arrival <- df %>%
   inner_join(durations, by = 'TripID') %>% 
   inner_join(distances, by = 'TripID') %>% 
   mutate(Arrival = DateTimeReceived + minutes(round(duration))) %>% 
@@ -257,4 +258,3 @@ arrival <- inbound_df %>% ungroup() %>%
 
 DT::datatable(arrival)
 ```
-

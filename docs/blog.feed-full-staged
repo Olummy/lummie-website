@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Olumide Oyalola</title>
+<link>https://quartopub.com/sites/iamolumide/olumide-oyalola/blog.html</link>
+<atom:link href="https://quartopub.com/sites/iamolumide/olumide-oyalola/blog.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.2.335</generator>
+<lastBuildDate>Wed, 25 Jan 2023 23:00:00 GMT</lastBuildDate>
+<item>
+  <title>{B4F502887207:/posts/plot-animation-post/index.html}</title>
+  <dc:creator>Olumide Oyalola</dc:creator>
+  <link>https://quartopub.com/sites/iamolumide/olumide-oyalola/posts/plot-animation-post/index.html</link>
+  <description>{B4F502887207:/posts/plot-animation-post/index.html}</description>
+  <category>Animation</category>
+  <category>Visualization</category>
+  <category>ggplot</category>
+  <category>R</category>
+  <category>gganimate</category>
+  <guid>https://quartopub.com/sites/iamolumide/olumide-oyalola/posts/plot-animation-post/index.html</guid>
+  <pubDate>Wed, 25 Jan 2023 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/osrm-post/index.html}</title>
+  <dc:creator>Olumide Oyalola</dc:creator>
+  <link>https://quartopub.com/sites/iamolumide/olumide-oyalola/posts/osrm-post/index.html</link>
+  <description>{B4F502887207:/posts/osrm-post/index.html}</description>
+  <category>Code</category>
+  <category>Analysis</category>
+  <category>GIS</category>
+  <category>R</category>
+  <category>Routing</category>
+  <category>Open Street Map (osrm)</category>
+  <guid>https://quartopub.com/sites/iamolumide/olumide-oyalola/posts/osrm-post/index.html</guid>
+  <pubDate>Tue, 18 Oct 2022 23:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>{B4F502887207:/posts/plot-animation-post/index.html}</title>
+  <link>https://quartopub.com/sites/iamolumide/olumide-oyalola/posts/plot-animation-post/index.html</link>
+  <description>{B4F502887207:/posts/plot-animation-post/index.html}</description>
+  <guid>https://quartopub.com/sites/iamolumide/olumide-oyalola/posts/plot-animation-post/index.html</guid>
+  <pubDate>Thu, 02 Feb 2023 13:56:07 GMT</pubDate>
+</item>
+</channel>
+</rss>
