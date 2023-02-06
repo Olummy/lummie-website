@@ -23,6 +23,7 @@ For the purpose of this post, the ***osrmTable*** function from the **osrm** pac
 ```{r}
 #| eval: false
 #| echo: true
+#| label: install-packages
 
 
 #install.packages("osrm")
@@ -33,6 +34,7 @@ For the purpose of this post, the ***osrmTable*** function from the **osrm** pac
 ```{r}
 #| eval: true
 #| echo: true
+#| label: load-packages
 
 
 # Install pacman package if needed
@@ -59,7 +61,6 @@ pacman::p_load(
   magrittr,
   janitor,
   arrow,
-  magrittr,
   osrm
 )
 ```
@@ -69,12 +70,13 @@ pacman::p_load(
 ```{r}
 #| eval: true
 #| echo: true
+#| label: load-data
 
 # load  file as tibble
 
 tic("Load the csv file")
 
-df <- read_csv("ml_data.parquet")
+df <- read_parquet("ml_data.parquet")
 
 toc()
 
@@ -85,7 +87,8 @@ toc()
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
+#| label: data-munging
 
 remove <- c("/Date", "(", ")/", "[[:punct:]]")
 
@@ -95,7 +98,8 @@ var <- c("ActualSpeed", "Address", "Altitude", "AssetClass", "AssetLocationID", 
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
+#| label: data-cleaning
 
 
 # data cleaning
@@ -153,7 +157,10 @@ df %<>% mutate(TripID = as.numeric(TripID))
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
+#| label: geo-setting
+
+
 options(scipen = 999)
 
 # destination dataframe
@@ -173,7 +180,8 @@ ibese_geofence <- c("Ibese", "IBESE", "Vehicle Park", "Vehicle Park 2")
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
+#| label: direction
 
 
 inbound_df <- df %>% 
@@ -209,7 +217,8 @@ inbound_df <- df %>%
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
+#| label: arrival
 duration <- osrmTable(src = df %>%
                         # filter(as.Date(DateTimeReceived) == today()) %>% 
                         select(TripID, Longitude, Latitude) %>% 
@@ -248,7 +257,10 @@ Joining the `durations`, `distances` and `inbound_df` data frames.
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
+#| label: joining
+
+
 arrival <- df %>%
   inner_join(durations, by = 'TripID') %>% 
   inner_join(distances, by = 'TripID') %>% 
@@ -256,5 +268,5 @@ arrival <- df %>%
   select(TripID, Reference, Longitude, Latitude, Distance, DateTimeReceived, Arrival) %>% 
   arrange(Distance)
 
-DT::datatable(arrival)
+#DT::datatable(arrival)
 ```

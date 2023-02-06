@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.2.335">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
 <meta name="author" content="Olumide Oyalola">
 <meta name="dcterms.date" content="2022-10-19">
 <meta name="description" content="In this blog post, I would demonstrate how I used the osrm package in R to return the distance and travel time between a destination and different sources">
-
 <title>Olumide Oyalola - Working with the OSRM API</title>
 <style>
 code{white-space: pre-wrap;}
@@ -88,7 +85,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
@@ -107,8 +103,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -126,18 +121,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit"
   }
-}</script>
-
-
-<link rel="stylesheet" href="../../styles.css">
+}</script><link rel="stylesheet" href="../../styles.css">
 </head>
-
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Olumide Oyalola</span>
@@ -148,7 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="../../index.html">
  <span class="menu-text">Home</span></a>
   </li>  
@@ -165,8 +154,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">Projects</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
+<ul class="navbar-nav navbar-nav-scroll ms-auto">
+<li class="nav-item compact">
     <a class="nav-link" href="../../blog.xml"><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
@@ -192,24 +181,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
+<div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
               </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Working with the OSRM API</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Code</div>
@@ -248,117 +231,205 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
-</header>
-
-<section id="introduction-to-osrm-r-package" class="level2">
-<h2 class="anchored" data-anchor-id="introduction-to-osrm-r-package">Introduction to OSRM R package</h2>
+</header><section id="introduction-to-osrm-r-package" class="level2"><h2 class="anchored" data-anchor-id="introduction-to-osrm-r-package">Introduction to OSRM R package</h2>
 <p>An interface between <code>R</code> and the <code>OSRM</code> (OpenStreetMap-Based Routing Service) API. <code>OSRM</code> is a routing service based on <code>OpenStreetMap</code> data. <a href="http://project-osrm.org">See</a> for more information. This package allows to compute <strong>routes</strong>, <strong>trips</strong>, <strong>isochrones</strong> and <strong>travel distances</strong> matrices (<em>travel time in minutes</em> and <em>distance in kilometer</em>).</p>
 <p>The package is available on CRAN and it can be installed by running the code chunk below from the Rstudio console.</p>
 <p>For the purpose of this post, the <strong><em>osrmTable</em></strong> function from the <strong>osrm</strong> package in R would be used to return the distance in meter and the travel time in minutes.</p>
 <div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"osrm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#install.packages("osrm")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section>
-<section id="load-packages" class="level2">
-<h2 class="anchored" data-anchor-id="load-packages">Load Packages</h2>
+</section><section id="load-packages" class="level2"><h2 class="anchored" data-anchor-id="load-packages">Load Packages</h2>
 <div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install pacman package if needed</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"pacman"</span>)) <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: pacman</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'pacman' was built under R version 4.0.5</code></pre>
-</div>
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load the required packages</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  httr,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  jsonlite,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  tidyjson,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  tidyverse,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  lubridate,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  geosphere,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  anytime,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  tictoc,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  stringi,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  maptools,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  geosphere,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  sf,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  sp,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  openxlsx,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  leaflet,</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>  magrittr,</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>  janitor,</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  arrow,</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  magrittr,</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  osrm</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Install pacman package if needed</span></span>
+<span><span class="co">#if(!require("pacman")) install.packages("pacman")</span></span>
+<span></span>
+<span><span class="co"># load the required packages</span></span>
+<span></span>
+<span><span class="fu">pacman</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pacman/man/p_load.html">p_load</a></span><span class="op">(</span></span>
+<span>  <span class="va">httr</span>,</span>
+<span>  <span class="va">jsonlite</span>,</span>
+<span>  <span class="va">tidyjson</span>,</span>
+<span>  <span class="va">tidyverse</span>,</span>
+<span>  <span class="va">lubridate</span>,</span>
+<span>  <span class="va">geosphere</span>,</span>
+<span>  <span class="va">anytime</span>,</span>
+<span>  <span class="va">tictoc</span>,</span>
+<span>  <span class="va">stringi</span>,</span>
+<span>  <span class="va">maptools</span>,</span>
+<span>  <span class="va">geosphere</span>,</span>
+<span>  <span class="va">sf</span>,</span>
+<span>  <span class="va">sp</span>,</span>
+<span>  <span class="va">openxlsx</span>,</span>
+<span>  <span class="va">leaflet</span>,</span>
+<span>  <span class="va">magrittr</span>,</span>
+<span>  <span class="va">janitor</span>,</span>
+<span>  <span class="va">arrow</span>,</span>
+<span>  <span class="va">osrm</span></span>
+<span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<section id="load-data" class="level3">
-<h3 class="anchored" data-anchor-id="load-data">Load Data</h3>
+<section id="load-data" class="level3"><h3 class="anchored" data-anchor-id="load-data">Load Data</h3>
 <div class="cell">
-<details open="">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load parquet file as tibble</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>(<span class="st">"Load the parquet files"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_parquet</span>(<span class="st">"ml_data.parquet"</span>, <span class="at">as_tibble =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># load  file as tibble</span></span>
+<span></span>
+<span><span class="fu">tic</span><span class="op">(</span><span class="st">"Load the csv file"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">read_parquet</span><span class="op">(</span><span class="st">"ml_data.parquet"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">toc</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code>Load the csv file: 0.22 sec elapsed</code></pre>
+</div>
+</div>
+</section></section><section id="data-munging" class="level2"><h2 class="anchored" data-anchor-id="data-munging">Data Munging</h2>
+<div class="cell">
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">remove</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"/Date"</span>, <span class="st">"("</span>, <span class="st">")/"</span>, <span class="st">"[[:punct:]]"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">var</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"ActualSpeed"</span>, <span class="st">"Address"</span>, <span class="st">"Altitude"</span>, <span class="st">"AssetClass"</span>, <span class="st">"AssetLocationID"</span>, <span class="st">"AssetStatus"</span>, <span class="st">"CategoryID"</span>, <span class="st">"CategoryName"</span>, <span class="st">"City"</span>, <span class="st">"CustomerName"</span>, <span class="st">"DateTimeLocal"</span>, <span class="st">"DateTimeReceived"</span>, <span class="st">"DeliveryOrderNumber"</span>, <span class="st">"DepartureDateTime"</span>, <span class="st">"DestinationArea"</span>, <span class="st">"DestinationCity"</span>, <span class="st">"DestinationSite"</span>, <span class="st">"DestinationStreet"</span>, <span class="st">"DeviceType"</span>, <span class="st">"DirectionString"</span>, <span class="st">"Distance"</span>, <span class="st">"DriverCode"</span>, <span class="st">"DriverID"</span>, <span class="st">"Geofence"</span>, <span class="st">"IgnitionStatus"</span>, <span class="st">"Information"</span>, <span class="st">"JourneyDistance"</span>, <span class="st">"JourneyDuration"</span>, <span class="st">"JourneyIdleTime"</span>, <span class="st">"JourneyMaxSpeed"</span>, <span class="st">"LastIgnitionOff"</span>, <span class="st">"LastIgnitionOn"</span>, <span class="st">"Latitude"</span>, <span class="st">"Load"</span>, <span class="st">"Longitude"</span>, <span class="st">"NumSatellites"</span>, <span class="st">"Odometer"</span>, <span class="st">"Reason"</span>, <span class="st">"ReasonString"</span>, <span class="st">"Reference"</span>, <span class="st">"Region"</span>, <span class="st">"SiteName"</span>, <span class="st">"SpeedOverGround"</span>, <span class="st">"Status"</span>, <span class="st">"Street"</span>, <span class="st">"TrackTrue"</span>, <span class="st">"TripDestination"</span>, <span class="st">"TripID"</span>, <span class="st">"TripSource"</span>, <span class="st">"TripType"</span>, <span class="st">"UTCDateTime"</span>, <span class="st">"WaybillNumber"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Load the parquet files: 0.17 sec elapsed</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="data-munging" class="level2">
-<h2 class="anchored" data-anchor-id="data-munging">Data Munging</h2>
-<div class="cell">
-
 </div>
 <div class="cell">
-
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># data cleaning</span></span>
+<span></span>
+<span><span class="va">df</span> <span class="op">%&lt;&gt;%</span> </span>
+<span>  <span class="co">#dplyr::select(tidyselect::all_of(var)) %&gt;% </span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>DateTimeLocal <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">`DateTimeLocal`</span>, </span>
+<span>                                        <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">remove</span>, collapse <span class="op">=</span> <span class="st">"|"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         DateTimeLocal <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">`DateTimeLocal`</span>, </span>
+<span>                                        <span class="st">"\\+0100|\\+0000"</span><span class="op">)</span>,</span>
+<span>         DateTimeLocal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">`DateTimeLocal`</span><span class="op">)</span>,</span>
+<span>         DateTimeLocal <span class="op">=</span> <span class="va">`DateTimeLocal`</span><span class="op">/</span><span class="fl">1000</span>,</span>
+<span>         DateTimeLocal <span class="op">=</span> <span class="fu">anytime</span><span class="op">(</span><span class="va">`DateTimeLocal`</span><span class="op">)</span>,</span>
+<span>         DateTimeReceived <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">DateTimeReceived</span>, </span>
+<span>                                           <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">remove</span>, collapse <span class="op">=</span> <span class="st">"|"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         DateTimeReceived <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">DateTimeReceived</span>, </span>
+<span>                                           <span class="st">"\\+0100|\\+0000"</span><span class="op">)</span>,</span>
+<span>         DateTimeReceived <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">DateTimeReceived</span><span class="op">)</span>,</span>
+<span>         DateTimeReceived <span class="op">=</span> <span class="va">DateTimeReceived</span><span class="op">/</span><span class="fl">1000</span>,</span>
+<span>         DateTimeReceived <span class="op">=</span> <span class="fu">anytime</span><span class="op">(</span><span class="va">DateTimeReceived</span><span class="op">)</span>,</span>
+<span>         DepartureDateTime <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">DepartureDateTime</span>, </span>
+<span>                                            <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">remove</span>, collapse <span class="op">=</span> <span class="st">"|"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         DepartureDateTime <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">DepartureDateTime</span>, </span>
+<span>                                            <span class="st">"\\+0100|\\+0000"</span><span class="op">)</span>,</span>
+<span>         DepartureDateTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">DepartureDateTime</span><span class="op">)</span>,</span>
+<span>         DepartureDateTime <span class="op">=</span> <span class="va">DepartureDateTime</span><span class="op">/</span><span class="fl">1000</span>,</span>
+<span>         DepartureDateTime <span class="op">=</span> <span class="fu">anytime</span><span class="op">(</span><span class="va">DepartureDateTime</span><span class="op">)</span>,</span>
+<span>         UTCDateTime <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">UTCDateTime</span>, </span>
+<span>                                      <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">remove</span>, collapse <span class="op">=</span> <span class="st">"|"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         UTCDateTime <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">UTCDateTime</span>, </span>
+<span>                                      <span class="st">"\\+0100|\\+0000"</span><span class="op">)</span>,</span>
+<span>         UTCDateTime <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">UTCDateTime</span><span class="op">)</span>,</span>
+<span>         UTCDateTime <span class="op">=</span> <span class="va">UTCDateTime</span><span class="op">/</span><span class="fl">1000</span>,</span>
+<span>         UTCDateTime <span class="op">=</span> <span class="fu">anytime</span><span class="op">(</span><span class="va">UTCDateTime</span><span class="op">)</span>,</span>
+<span>         LastIgnitionOff <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">LastIgnitionOff</span>, </span>
+<span>                                          <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">remove</span>, collapse <span class="op">=</span> <span class="st">"|"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         LastIgnitionOff <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">LastIgnitionOff</span>, </span>
+<span>                                          <span class="st">"\\+0100|\\+0000"</span><span class="op">)</span>,</span>
+<span>         LastIgnitionOff <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">LastIgnitionOff</span><span class="op">)</span>,</span>
+<span>         LastIgnitionOff <span class="op">=</span> <span class="va">LastIgnitionOff</span><span class="op">/</span><span class="fl">1000</span>,</span>
+<span>         LastIgnitionOff <span class="op">=</span> <span class="fu">anytime</span><span class="op">(</span><span class="va">LastIgnitionOff</span><span class="op">)</span>,</span>
+<span>         LastIgnitionOn <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">LastIgnitionOn</span>, </span>
+<span>                                         <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">remove</span>, collapse <span class="op">=</span> <span class="st">"|"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         LastIgnitionOn <span class="op">=</span> <span class="fu">str_remove_all</span><span class="op">(</span><span class="va">LastIgnitionOn</span>, </span>
+<span>                                         <span class="st">"\\+0100|\\+0000"</span><span class="op">)</span>,</span>
+<span>         LastIgnitionOn <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">LastIgnitionOn</span><span class="op">)</span>,</span>
+<span>         LastIgnitionOn <span class="op">=</span> <span class="va">LastIgnitionOn</span><span class="op">/</span><span class="fl">1000</span>,</span>
+<span>         LastIgnitionOn <span class="op">=</span> <span class="fu">anytime</span><span class="op">(</span><span class="va">LastIgnitionOn</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">between</span><span class="op">(</span><span class="va">TripID</span>, <span class="fl">9000000000</span>, <span class="cn">Inf</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="va">TripID</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">df</span> <span class="op">%&lt;&gt;%</span> <span class="fu">mutate</span><span class="op">(</span>TripID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">TripID</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
-
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>scipen <span class="op">=</span> <span class="fl">999</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># destination dataframe</span></span>
+<span></span>
+<span><span class="va">ibese_df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"ibese"</span>, lon <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3.043568</span><span class="op">)</span>, lat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">7.006293</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">ibese</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3.043568</span>,<span class="fl">7.006293</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ibese_geofence</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Ibese"</span>, <span class="st">"IBESE"</span>, <span class="st">"Vehicle Park"</span>, <span class="st">"Vehicle Park 2"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<section id="determining-the-direction-of-the-truck" class="level3">
-<h3 class="anchored" data-anchor-id="determining-the-direction-of-the-truck">Determining the direction of the truck</h3>
+<section id="determining-the-direction-of-the-truck" class="level3"><h3 class="anchored" data-anchor-id="determining-the-direction-of-the-truck">Determining the direction of the truck</h3>
 <div class="cell">
-
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">inbound_df</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">AssetStatus</span> <span class="op">==</span> <span class="st">"InService"</span>, <span class="va">Longitude</span> <span class="op">&gt;</span> <span class="fl">0</span>, </span>
+<span>         <span class="va">Latitude</span> <span class="op">&gt;</span> <span class="fl">0</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="op">!</span><span class="fu">between</span><span class="op">(</span><span class="va">TripID</span>, <span class="fl">9000000000</span>, <span class="cn">Inf</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">TripID</span> <span class="op">!=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">Reference</span>, <span class="va">DateTimeReceived</span>, </span>
+<span>         <span class="va">Longitude</span>, <span class="va">Latitude</span>, <span class="va">TripID</span>, <span class="va">Geofence</span>, <span class="va">Altitude</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">Reference</span>, <span class="va">DateTimeReceived</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">Reference</span>, <span class="va">TripID</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>.after <span class="op">=</span> <span class="va">DateTimeReceived</span>,</span>
+<span>         TimeDiff <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/difftime.html">difftime</a></span><span class="op">(</span><span class="va">DateTimeReceived</span>, </span>
+<span>                                        <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span><span class="op">(</span><span class="va">DateTimeReceived</span>, </span>
+<span>                                            default <span class="op">=</span> <span class="fu">first</span><span class="op">(</span><span class="va">DateTimeReceived</span><span class="op">)</span><span class="op">)</span>, </span>
+<span>                                        units <span class="op">=</span> <span class="st">"hours"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         LongLat <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">Longitude</span>, <span class="va">Latitude</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
+<span>         DistCovered <span class="op">=</span> <span class="fu">distGeo</span><span class="op">(</span><span class="va">LongLat</span>, <span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span><span class="op">(</span><span class="va">LongLat</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         DistCovered <span class="op">=</span> <span class="va">DistCovered</span><span class="op">/</span><span class="fl">1000</span>,</span>
+<span>         DistToPlant <span class="op">=</span> <span class="fu">distGeo</span><span class="op">(</span><span class="va">LongLat</span>, <span class="va">ibese</span><span class="op">)</span>,</span>
+<span>         DistToPlant <span class="op">=</span> <span class="va">DistToPlant</span><span class="op">/</span><span class="fl">1000</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>Direction <span class="op">=</span> <span class="fu">if_else</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/lag.html">lag</a></span><span class="op">(</span><span class="va">DistToPlant</span><span class="op">)</span> <span class="op">&lt;</span> <span class="va">DistToPlant</span>, <span class="st">"Inbound"</span>, <span class="st">"Outbound"</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">Direction</span> <span class="op">==</span> <span class="st">"Inbound"</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">slice_tail</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">TripID</span> <span class="op">!=</span> <span class="fl">3000071349</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-</section>
-<section id="estimating-the-arrival-time-and-distance" class="level3">
-<h3 class="anchored" data-anchor-id="estimating-the-arrival-time-and-distance">Estimating the arrival time and distance</h3>
+</section><section id="estimating-the-arrival-time-and-distance" class="level3"><h3 class="anchored" data-anchor-id="estimating-the-arrival-time-and-distance">Estimating the arrival time and distance</h3>
 <div class="cell">
-
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">duration</span> <span class="op">&lt;-</span> <span class="fu">osrmTable</span><span class="op">(</span>src <span class="op">=</span> <span class="va">df</span> <span class="op">%&gt;%</span></span>
+<span>                        <span class="co"># filter(as.Date(DateTimeReceived) == today()) %&gt;% </span></span>
+<span>                        <span class="fu">select</span><span class="op">(</span><span class="va">TripID</span>, <span class="va">Longitude</span>, <span class="va">Latitude</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>                        <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>,</span>
+<span>                      dst <span class="op">=</span> <span class="va">ibese_df</span>, measure <span class="op">=</span> <span class="st">"duration"</span>, osrm.profile <span class="op">=</span> <span class="st">"car"</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">distance</span> <span class="op">&lt;-</span> <span class="fu">osrmTable</span><span class="op">(</span>src <span class="op">=</span> <span class="va">df</span> <span class="op">%&gt;%</span></span>
+<span>                        <span class="co"># filter(as.Date(DateTimeReceived) == today()) %&gt;% </span></span>
+<span>                        <span class="fu">select</span><span class="op">(</span><span class="va">TripID</span>, <span class="va">Longitude</span>, <span class="va">Latitude</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>                        <span class="fu">slice_head</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span>,</span>
+<span>                      dst <span class="op">=</span> <span class="va">ibese_df</span>, measure <span class="op">=</span> <span class="st">"distance"</span>, osrm.profile <span class="op">=</span> <span class="st">"car"</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">distances</span> <span class="op">&lt;-</span> <span class="va">distance</span><span class="op">$</span><span class="va">distances</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">rownames_to_column</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">rename</span><span class="op">(</span>TripID <span class="op">=</span> <span class="va">rowname</span>,</span>
+<span>         Distance <span class="op">=</span> <span class="va">ibese</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>TripID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">TripID</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">durations</span> <span class="op">&lt;-</span> <span class="va">duration</span><span class="op">$</span><span class="va">durations</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">rownames_to_column</span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">rename</span><span class="op">(</span>TripID <span class="op">=</span> <span class="va">rowname</span>,</span>
+<span>         duration <span class="op">=</span> <span class="va">ibese</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>TripID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">TripID</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-</section>
-</section>
-<section id="data-join" class="level2">
-<h2 class="anchored" data-anchor-id="data-join">Data Join</h2>
+</section></section><section id="data-join" class="level2"><h2 class="anchored" data-anchor-id="data-join">Data Join</h2>
 <p>Joining the <code>durations</code>, <code>distances</code> and <code>inbound_df</code> data frames.</p>
 <div class="cell">
-
+<details open=""><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">arrival</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">inner_join</span><span class="op">(</span><span class="va">durations</span>, by <span class="op">=</span> <span class="st">'TripID'</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">inner_join</span><span class="op">(</span><span class="va">distances</span>, by <span class="op">=</span> <span class="st">'TripID'</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>Arrival <span class="op">=</span> <span class="va">DateTimeReceived</span> <span class="op">+</span> <span class="fu">minutes</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">duration</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">TripID</span>, <span class="va">Reference</span>, <span class="va">Longitude</span>, <span class="va">Latitude</span>, <span class="va">Distance</span>, <span class="va">DateTimeReceived</span>, <span class="va">Arrival</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">Distance</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#DT::datatable(arrival)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -607,14 +678,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left"><span class="container"><strong>Made with <a href="https://quarto.org/" target="_blank">Posit Quarto</a></strong></span></div>   
       <div class="nav-footer-center"><span class="container"><strong><a href="mailto:olumideoyalola@gmail.com" target="_blank">Contact Olumide Oyalola</a></strong></span></div>
     <div class="nav-footer-right"><span class="container"><strong><a href="https://github.com/olummy/lummie-website" target="_blank">Github Repo</a></strong></span></div>
   </div>
 </footer>
-
 
 
 </body></html>

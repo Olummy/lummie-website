@@ -29,7 +29,7 @@ about:
 
 I am a data professional. I have extensive background working with varied data sets and using advanced analytics to enable business stakeholders to make informed decisions.
 
-I'm committed to a never ending improvement and to this end, I recently expanded my skill set to include topics like Quarto, tidymodels, working in cross-language R/Python environment. I make time for freelance projects that are engaging and challenging!
+I've since had engagements in various sectors spanning IT services, FMCG, Information services, and health interventions. I have a great communication and people management skills. I make time for freelance projects that are engaging and challenging!
 
 [Contact me on Codementor](https://www.codementor.io/@olumidemichaeloyalola)
 
