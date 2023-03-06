@@ -73,9 +73,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -172,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Analysis">Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Animation">Animation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Code">Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="GIS">GIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Open Street Map (osrm)">Open Street Map (osrm) <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Routing">Routing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Visualization">Visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gganimate">gganimate <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ggplot">ggplot <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Analysis">Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Animation">Animation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Classification">Classification <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Clinical Data">Clinical Data <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Code">Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="GIS">GIS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Open Street Map (osrm)">Open Street Map (osrm) <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Predictive Analytics">Predictive Analytics <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Routing">Routing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Tidymodels">Tidymodels <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Tidyverse">Tidyverse <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Visualization">Visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="gganimate">gganimate <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ggplot">ggplot <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -199,7 +199,107 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Animation,Visualization,ggplot,R,gganimate" data-listing-date-sort="1674687600000" data-listing-file-modified-sort="1675337594423" data-listing-reading-time-sort="2.57">
+<div class="quarto-post image-right" data-index="0" data-categories="Machine Learning,Tidymodels,Clinical Data,Classification,Predictive Analytics,R,Tidyverse" data-listing-date-sort="1677798000000" data-listing-file-modified-sort="1677927132797" data-listing-reading-time-sort="5.315">
+<div class="body">
+<a href="./posts/survival-tidymodels-post/index.html">
+<h3 class="no-anchor listing-title">
+Analysis of Clinical Trial Data
+</h3>
+<div class="listing-subtitle">
+
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Tidymodels'); return false;">
+Tidymodels
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Clinical Data'); return false;">
+Clinical Data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Classification'); return false;">
+Classification
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Predictive Analytics'); return false;">
+Predictive Analytics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Tidyverse'); return false;">
+Tidyverse
+</div>
+</div>
+<a href="./posts/survival-tidymodels-post/index.html">
+<div class="listing-description">
+<p>In this piece of an experimental project, we will examine factors that could lead to survival in breast cancer patients. Appropriate machine learning algorithm would be deployed to model the dataset using the tidymodels methodology in R.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/survival-tidymodels-post/index.html">
+<div class="listing-date">
+Mar 3, 2023
+</div>
+<div class="listing-author">
+Olumide Oyalola
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Machine Learning,Tidymodels,Clinical Data,Classification,Predictive Analytics,R,Tidyverse" data-listing-date-sort="1677798000000" data-listing-file-modified-sort="1677927484542" data-listing-reading-time-sort="12.3">
+<div class="body">
+<a href="./posts/telco-churn-tidymodels-post/index.html">
+<h3 class="no-anchor listing-title">
+Telco Customer Churn
+</h3>
+<div class="listing-subtitle">
+Focused customer retention programs
+</div>
+</a>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Tidymodels'); return false;">
+Tidymodels
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Clinical Data'); return false;">
+Clinical Data
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Classification'); return false;">
+Classification
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Predictive Analytics'); return false;">
+Predictive Analytics
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Tidyverse'); return false;">
+Tidyverse
+</div>
+</div>
+<a href="./posts/telco-churn-tidymodels-post/index.html">
+<div class="listing-description">
+<p>This experimental project addresses the customer churn in a telecommunication company. Different classification models are considered in the modeling section using the tidymodels methodology in R.</p>
+</div>
+</a>
+</div>
+<div class="metadata">
+<a href="./posts/telco-churn-tidymodels-post/index.html">
+<div class="listing-date">
+Mar 3, 2023
+</div>
+<div class="listing-author">
+Olumide Oyalola
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Animation,Visualization,ggplot,R,gganimate" data-listing-date-sort="1674687600000" data-listing-file-modified-sort="1675337594423" data-listing-reading-time-sort="2.57">
 <div class="body">
 <a href="./posts/plot-animation-post/index.html">
 <h3 class="no-anchor listing-title">
@@ -243,7 +343,7 @@ Olumide Oyalola
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Code,Analysis,GIS,R,Routing,Open Street Map (osrm)" data-listing-date-sort="1666134000000" data-listing-file-modified-sort="1675697530222" data-listing-reading-time-sort="9.135">
+<div class="quarto-post image-right" data-index="3" data-categories="Code,Analysis,GIS,R,Routing,Open Street Map (osrm)" data-listing-date-sort="1666134000000" data-listing-file-modified-sort="1675697530222" data-listing-reading-time-sort="9.135">
 <div class="body">
 <a href="./posts/osrm-post/index.html">
 <h3 class="no-anchor listing-title">
