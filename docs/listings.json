@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/customer-lifetime-value-post/index.html",
       "/posts/survival-tidymodels-post/index.html",
       "/posts/telco-churn-tidymodels-post/index.html",
       "/posts/plot-animation-post/index.html",
